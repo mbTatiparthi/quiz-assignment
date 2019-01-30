@@ -14,5 +14,16 @@
 
 
 <ion-content padding>
+  <p class="question">
+    <ion-icon class="icon" name="text"></ion-icon>
+    "{{ activeQuestion.question}}"
+  </p>
 
+  <ion-list radio-group>
+    <ion-item *ngFor="let option of activeQuestion.options; let i=index">
+      <ion-label class="option">{{option}}</ion-label>
+      <ion-radio (ionSelect)='checkOption(i, activeQuestion)'></ion-radio>
+    </ion-item>
+  </ion-list>
+  <ion-label>{{feedback}}</ion-label>
 </ion-content>

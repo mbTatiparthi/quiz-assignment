@@ -1,25 +1,66 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the QuestionPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { QuizQuestion } from '../../quizquestion';
 
 @IonicPage()
 @Component({
   selector: 'page-question',
   templateUrl: 'question.html',
 })
-export class QuestionPage {
+export class QuestionPage implements OnInit {
+  
+  questions: QuizQuestion[] = [];
+  activeQuestion: QuizQuestion;
+  feedback: string;
+  questionCounter: number = 0;
+  correctAnswerCounter: number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad QuestionPage');
+  ngOnInit() {
+      this.questions = [{
+        question: "What´s name of the actor of Terminator?",
+        options: [
+          "Arnold",
+          "Sampsa",
+          "Jesus"],
+        correctOption: 1
+      },
+      {
+        question: "What´s name of the actor of Superman?",
+        options: [
+          "Arnold",
+          "Sampsa",
+          "Jesus"],
+        correctOption: 0
+      }
+    ]
+
+    this.questionCounter = 0;
+    this.setQuestion();
   }
 
+  setQuestion() {
+    if(this.questionCounter == this.questions.length) {
+      this.questionCounter = 0;
+    }
+    this.feedback = '';
+    this.activeQuestion = this.questions[this.questionCounter];
+    this.questionCounter++;
+  }
+
+  checkOption(option, activeQuestion) {
+    if(option == activeQuestion.correctOption) {
+      this.feedback = 'CORRECT!';
+      this.correctAnswerCounter++;
+    } else {
+      this.feedback = 'INCORRECT!';
+    }
+
+    setInterval(() => {
+      this.setQuestion();
+    }, 2000);
+    //this.setQuestion();
+  }
 }
