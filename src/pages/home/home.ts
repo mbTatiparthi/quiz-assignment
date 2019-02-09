@@ -9,7 +9,6 @@ import { QuestionPage } from '../question/question';
 export class HomePage {
 
   constructor(public navCtrl: NavController) {
-
   }
 
   startQuiz() {

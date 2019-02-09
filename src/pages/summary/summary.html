@@ -1,18 +1,12 @@
-<!--
-  Generated template for the SummaryPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>summary</ion-title>
-  </ion-navbar>
-
+  <ion-title>summary</ion-title>
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-label>Correct answers: {{points}}/{{numOfQuestions}}</ion-label>
+  <ion-label>Correctness: {{correctness}}%</ion-label>
+  <ion-label>Duration: {{duration}} seconds</ion-label>
+  <button ion-button round (click)="startQuiz()">Try again</button>
 </ion-content>

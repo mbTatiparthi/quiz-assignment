@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the SummaryPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { QuestionPage } from '../question/question';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SummaryPage {
 
+  points: number;
+  numOfQuestions: number;
+  correctness: number;
+  duration: number;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.points = navParams.get('points');
+    this.numOfQuestions = navParams.get('numOfQuestions');
+    this.correctness = this.points/this.numOfQuestions*100;
+    this.duration = navParams.get('duration');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SummaryPage');
   }
 
+  startQuiz() {
+    this.navCtrl.push(QuestionPage);
+  }
 }

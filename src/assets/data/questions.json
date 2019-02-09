@@ -1,0 +1,25 @@
+
+ {
+    "questions": [
+        {
+            "question": "What´s what 2 eka",
+            "options": ["good", "bad", "evil"],
+            "correctOption": 2
+        },
+        {
+            "question": "What´s not 0 toka",
+            "options":["good", "bad", "evil"],
+            "correctOption": 0
+        },
+        {
+            "question": "What´s that 1 kolmas",
+            "options":["good", "bad", "evil"],
+            "correctOption": 1
+        },
+        {
+            "question": "What´s there 0 neljäs",
+            "options":["good", "bad", "evil"],
+            "correctOption": 0
+        }
+    ]
+}

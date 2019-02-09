@@ -9,6 +9,9 @@ import { HomePage } from '../pages/home/home';
 import { QuestionPage } from '../pages/question/question';
 import { SummaryPage } from '../pages/summary/summary';
 
+import { HttpClientModule} from '@angular/common/http';
+import { jsonReader } from '../jsonreader';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { SummaryPage } from '../pages/summary/summary';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -31,7 +35,9 @@ import { SummaryPage } from '../pages/summary/summary';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    jsonReader
   ]
 })
+
 export class AppModule {}

@@ -1,29 +1,29 @@
-<!--
-  Generated template for the QuestionPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>question</ion-title>
-  </ion-navbar>
-
+  <ion-title>question</ion-title>
 </ion-header>
 
 
 <ion-content padding>
   <p class="question">
     <ion-icon class="icon" name="text"></ion-icon>
-    "{{ activeQuestion.question}}"
+    "{{ activeQuestion?.question }}"
   </p>
 
   <ion-list radio-group>
-    <ion-item *ngFor="let option of activeQuestion.options; let i=index">
-      <ion-label class="option">{{option}}</ion-label>
-      <ion-radio (ionSelect)='checkOption(i, activeQuestion)'></ion-radio>
+    <ion-item *ngFor="let option of activeQuestion?.options; let i=index">
+        <ion-label class="option">
+          <button ion-button [disabled]="disableButton" (click)="checkOption(i, activeQuestion)">
+            {{option}}
+          </button>
+        </ion-label>
     </ion-item>
   </ion-list>
   <ion-label>{{feedback}}</ion-label>
+  <div *ngIf="disableButton && !allQuestionsAsked">
+    <button ion-button (click)="setQuestion()">Next question</button>
+  </div>
+  <div *ngIf="allQuestionsAsked">
+    <button ion-button (click)="seeSummary()">Summary</button>
+  </div>
 </ion-content>
