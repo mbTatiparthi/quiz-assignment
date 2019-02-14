@@ -2,24 +2,24 @@
  {
     "questions": [
         {
-            "question": "What´s what 2 eka",
-            "options": ["good", "bad", "evil"],
+            "question": "Galileo was an Italian astronomer who",
+            "options": ["Developed the telescope", "Discovered four satellites of Jupiter", "Discovered The Principle of the Pendulum", "All of the above"],
+            "correctOption": 3
+        },
+        {
+            "question": "Fathometer is used to measure",
+            "options":["Earthquakes", "Rainfall", "Ocean depth", "Sound intensity"],
             "correctOption": 2
         },
         {
-            "question": "What´s not 0 toka",
-            "options":["good", "bad", "evil"],
+            "question": "Which planet has the longest day?",
+            "options":["Venus", "Mars", "Saturn", "Uranus"],
             "correctOption": 0
         },
         {
-            "question": "What´s that 1 kolmas",
-            "options":["good", "bad", "evil"],
+            "question": "How many colours are there in a rainbow?",
+            "options":["6", "7", "8", "9"],
             "correctOption": 1
-        },
-        {
-            "question": "What´s there 0 neljäs",
-            "options":["good", "bad", "evil"],
-            "correctOption": 0
         }
     ]
 }

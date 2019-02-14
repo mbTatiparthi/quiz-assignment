@@ -28,7 +28,6 @@ export class QuestionPage implements OnInit {
 
   ngOnInit() {   
     this.jsonreader.getJSON().subscribe(data => {
-      console.log(data);
       this.setDataFromJson(data);
       this.setQuestion();
       this.startTime = new Date();
@@ -70,7 +69,7 @@ export class QuestionPage implements OnInit {
 
   countDuration() {
     this.endTime = new Date();
-    this.duration = Math.abs(this.startTime - this.endTime) / 1000 % 60;
+    this.duration = Math.abs(this.startTime - this.endTime) / 1000;
   }
 
   showAnswer(option, activeQuestion) {

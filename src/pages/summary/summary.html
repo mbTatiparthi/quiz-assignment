@@ -1,12 +1,18 @@
 
 <ion-header>
-  <ion-title>summary</ion-title>
+  <ion-title class="title">Quiz</ion-title>
 </ion-header>
 
 
 <ion-content padding>
-  <ion-label>Correct answers: {{points}}/{{numOfQuestions}}</ion-label>
-  <ion-label>Correctness: {{correctness}}%</ion-label>
-  <ion-label>Duration: {{duration}} seconds</ion-label>
-  <button ion-button round (click)="startQuiz()">Try again</button>
+  <div class="content">
+      <div id="img" class="correctnessImg" [ngStyle]="{'transform': 'rotate(' + angle + 'deg)'}">
+          <img src="../../assets/imgs/thumb.png">
+      </div>
+      <ion-label>Correct answers: {{points}}/{{numOfQuestions}}</ion-label>
+      <ion-label>Correctness: {{correctness}}%</ion-label>
+      <ion-label>Duration: {{duration}} seconds</ion-label>
+      <button ion-button color="dark" (click)="startQuiz()">Try again</button>
+  </div>
+
 </ion-content>

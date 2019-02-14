@@ -1,6 +1,6 @@
 
 <ion-header>
-  <ion-title>question</ion-title>
+  <ion-title class="title">Quiz</ion-title>
 </ion-header>
 
 
@@ -13,17 +13,19 @@
   <ion-list radio-group>
     <ion-item *ngFor="let option of activeQuestion?.options; let i=index">
         <ion-label class="option">
-          <button ion-button [disabled]="disableButton" (click)="checkOption(i, activeQuestion)">
+          <button ion-button color="dark" [disabled]="disableButton" (click)="checkOption(i, activeQuestion)">
             {{option}}
           </button>
         </ion-label>
     </ion-item>
   </ion-list>
-  <ion-label>{{feedback}}</ion-label>
-  <div *ngIf="disableButton && !allQuestionsAsked">
-    <button ion-button (click)="setQuestion()">Next question</button>
+  
+  <div class="qBtn" *ngIf="disableButton && !allQuestionsAsked">
+      <ion-label>{{feedback}}</ion-label>
+    <button ion-button color="dark" (click)="setQuestion()">Next question</button>
   </div>
-  <div *ngIf="allQuestionsAsked">
-    <button ion-button (click)="seeSummary()">Summary</button>
+  <div class="qBtn" *ngIf="allQuestionsAsked">
+      <ion-label>{{feedback}}</ion-label>
+    <button ion-button color="dark" (click)="seeSummary()">Summary</button>
   </div>
 </ion-content>
